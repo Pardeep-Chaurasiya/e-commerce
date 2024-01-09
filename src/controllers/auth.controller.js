@@ -1,15 +1,16 @@
 const userService = require("../services/user.service")
 const jwtProvider = require("../middlewares/jwtProvider")
 const bcrypt = require("bcrypt")
+const cartService = require("../services/cart.service")
 
 const register = async(req,res)=>{
     try {
         const user = await userService.createUser(req.body);
-        const jwt = jwtProvider.generateToken(user._id)
+        // const jwt = jwtProvider.generateToken(user._id)
 
-        // await cartService.createCart(user)
+        await cartService.createCart(user)
 
-        return res.status(201).json({jwt,message:"Registerd successfully"})
+        return res.status(201).json({message:"Registerd successfully"})
     } catch (error) {
         return res.status(500).send({error:error.message})
     }
@@ -31,7 +32,7 @@ const login = async(req,res)=>{
 
         const jwt = jwtProvider.generateToken(user._id)
 
-        return res.status(200).json({message:"Login Successfully"})
+        return res.status(200).json({message:"Login Successfully",token:jwt})
 
     } catch (error) {
         return res.status(500).send({error:error.message})
