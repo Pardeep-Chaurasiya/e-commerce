@@ -17,7 +17,7 @@ const cartSchema = new mongoose.Schema(
             required:true,
             default:0
         },
-        totalItems:{
+        totalItem:{
             type:Number,
             required:true,
             default:0
