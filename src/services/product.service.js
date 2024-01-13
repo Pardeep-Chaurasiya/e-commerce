@@ -55,7 +55,7 @@ const createProduct = async(reqData) =>{
 }
 
 
-const deletProduct = async(productId) =>{
+const deleteProduct = async(productId) =>{
     const product = await findProductById(productId)
 
     await Product.findByIdAndDelete(productId)
@@ -146,4 +146,4 @@ const createMultipleProduct = async(products) =>{
     }
 }
 
-module.exports = {createProduct,deletProduct,updateProduct,findProductById,getAllProducts,createMultipleProduct}
+module.exports = {createProduct,deleteProduct,updateProduct,findProductById,getAllProducts,createMultipleProduct}
