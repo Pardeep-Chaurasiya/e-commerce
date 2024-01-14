@@ -1,13 +1,12 @@
-const {Router} = require("express")
-const router = Router()
+const { Router } = require("express");
+const router = Router();
 
-const orderController = require("../controllers/order.controller")
-const authenticate = require("../middlewares/authenticate")
+const productController = require("../controllers/product.controller");
+const authenticate = require("../middlewares/authenticate");
 
+router.post("/", authenticate, productController.createProduct);
+router.post("/create", authenticate, productController.createMultipleProduct);
+router.delete("/:id", authenticate, productController.deleteProduct);
+router.put("/:id", authenticate, productController.updateProduct);
 
-router.post("/",authenticate,orderController.createOrder)
-router.get("/user",authenticate,orderController.orderHistory)
-router.get("/:id",authenticate,orderController.findOrderById)
-
-
-modeule.export = router
+module.export = router;

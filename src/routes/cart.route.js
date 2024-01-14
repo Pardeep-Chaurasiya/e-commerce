@@ -1,11 +1,10 @@
-const {Router} = require("express")
-const router = Router()
+const { Router } = require("express");
+const router = Router();
 
-const cardController = require("../controllers/cart.controller")
-const authenticate = require("../middlewares/authenticate")
+const cardController = require("../controllers/cart.controller");
+const authenticate = require("../middlewares/authenticate");
 
-router.get("/",authenticate,cardController.findUserCart)
-router.put("/add",authenticate,cardController.addItemToCart)
+router.get("/", authenticate, cardController.findUserCart);
+router.put("/add", authenticate, cardController.addItemToCart);
 
-
-modeule.export = router
+module.export = router;

@@ -1,4 +1,4 @@
-const CartItem = require("../models/cartItem.mode");
+const CartItem = require("../models/cartItem.model");
 const userService = require("./user.service");
 
 const updateCartItem = async (userId, cartItemId, cartItemData) => {

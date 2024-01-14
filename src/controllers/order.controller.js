@@ -1,4 +1,4 @@
-const orderService = requrie("../services/order.service")
+const orderService = require("../services/order.service")
 
 const createOrder = async(req,res) =>{
     const user = req.user
