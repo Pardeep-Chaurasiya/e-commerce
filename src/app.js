@@ -21,14 +21,14 @@ app.use(express.json());
 
 app.use("/api/auth", authRoute);
 app.use("/api/users",userRoute)
-// app.use("/api/products",productRoute)
-// app.use("/api/admin/products",adminProductRoute)
-// app.use("/api/admin/orders",adminOrderRoute)
-// app.use("/api/cart",cartRoute)
-// app.use("/api/cart_items",cartItemRoute)
-// app.use("/api/orders",orderRoute)
-// app.use("/api/ratings",raingRoute)
-// app.use("/api/reviews",reviewRoute)
+app.use("/api/products",productRoute)
+app.use("/api/admin/products",adminProductRoute)
+app.use("/api/admin/orders",adminOrderRoute)
+app.use("/api/cart",cartRoute)
+app.use("/api/cart_items",cartItemRoute)
+app.use("/api/orders",orderRoute)
+app.use("/api/ratings",raingRoute)
+app.use("/api/reviews",reviewRoute)
 
 const PORT = process.env.PORT;
 connectDB();
